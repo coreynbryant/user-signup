@@ -3,22 +3,26 @@
 {% block content %}    
     
     <h1>User Sign-up</h1>
-    <form action="/welcome" method="post">
+    <form method="post" action="/feedback">
             <div class="form-group">
                 <label for="username">Username</label>              
-                    <input class="form-control" name="username" type="text" value="" placeholder="Username">                    
+                    <input class="form-control" name="username" type="text" value="{{user_val}}" placeholder="Username">  
+                    <p class="error">{{username_error}}</p>                 
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                    <input class="form-control" name="password" type="password" placeholder="Password">             
+                    <input class="form-control" name="password" type="password" placeholder="Password">
+                    <p class="error">{{password_error}}</p>              
             </div>
             <div class="form-group">
                 <label for="verify">Verify Password</label>
                     <input class="form-control" name="verify" type="password" placeholder="Verify Password">
+                    <p class="error">{{verify_error}}</p>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                    <input class="form-control" name="email" value=""placeholder="Email">            
+                    <input class="form-control" name="email" value=""placeholder="Email">
+                    <p class="error">{{email_error}}</p>            
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
     </form>
